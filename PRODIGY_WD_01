@@ -1,0 +1,93 @@
+#html
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interactive Navigation Menu</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <ul class="menu">
+                <li class="menu-item"><a href="file:///C:/Users/Lenovo/Desktop/html/priya.html#home">Home</a></li>
+                <li class="menu-item"><a href="file:///C:/Users/Lenovo/Desktop/html/priya.html#about">About us</a></li>
+                <li class="menu-item"><a href="file:///C:/Users/Lenovo/Desktop/html/priya.html#contact">Contact us</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <section id="home">Home<p>Product Reviews</p> <p>Offers</p></section>
+            <section id="about">About<p>Our journey began with a simple idea.Since then, we have grown into a trusted name in the market.We take pride in our unique aspects of the company, such as custom solutions, a diverse portfolio, sustainable practices. Our commitment to excellence is reflected in everything we do, from our product offerings to our customer service.                
+                Thank you! We look forward to serve you.Feel free to explore our website to learn more about our products/services and how we can assist you. If you have any questions or need further information, please don't hesitate to contact us.</p></section>
+            <section id="contact">Contact<p>priya100@gmail.com (9840440487)</p></section>
+        </div>
+        <script src="styles.js"></script>
+
+    </body>
+</html>
+
+#css
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #3a7bd5, #3a6073); /* Blue gradient */
+    padding: 10px 0;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    z-index: 1000;
+}
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item {
+    margin: 0 15px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 15px 20px;
+    border-radius: 10px;
+}
+.menu-item a:hover {
+    color: #ffeb3b; 
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.content {
+    margin-top: 60px;
+    padding: 20px;
+}
+
+section {
+    padding: 50px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+#js
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+            navbar.style.backgroundColor = '#1c3a57'; // Darker blue when scrolling
+            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.5)'; // Add shadow when scrolling
+        } else {
+            navbar.style.backgroundColor = 'transparent'; // Transparent background
+            navbar.style.boxShadow = 'none'; // Remove shadow
+        }
+    });
+});
